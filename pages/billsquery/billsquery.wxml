@@ -1,0 +1,66 @@
+<!--index.wxml-->
+<loading hidden="{{!loading}}">
+  {{title}}
+</loading>
+<view class="container" style="height:100%;width:100%;">
+  <view class="serchBox" style="width:100%;height:auto;">
+    <view class='page_row' bindtap="" style="">
+      <view class="search">
+        <view class="df search_arr" bindtap="">
+          <form bindsubmit="queryUser" bindreset="formReset">
+            <icon class="searchcion" size='20' type='search'></icon>
+            <input class="" type="text" placeholder="请输入关键字" name="billName" 
+            bindinput="searchName" bindblur="searchBillByName" value="{{nickname}}" />
+          </form>
+        </view>
+      </view>
+    </view>
+    <view class='page_row' bindtap="" style="">
+      <checkbox-group bindchange="checkboxChange" style="margin-left:25rpx;">
+        <label class="checkbox" wx:for="{{items}}" wx:key="{{keys}}">
+          <checkbox value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+        </label>
+      </checkbox-group>
+    </view>
+  </view>
+  <scroll-view scroll-y="true" class="page-body" bindscrolltolower="loadMore" style="height:100%;margin-top:0rpx;">
+    <!--list-->
+    <view class="nav_section" style="position:relative;top:1px;">
+      <view wx:if="{{billsData}}">
+        <block wx:for="{{billsData}}" wx:key="item.id">
+          <view class="nav_section_items">
+            <!--image-->
+            <view class="section_image" bindtap="navigateDetail" data-aid="{{item.id}}">
+              <block wx:if="{{item.coverpath}}">
+                <image src="{{item.coverpath}}" mode="aspectFill" style="border-radius:100%;"></image>
+              </block>
+              <block wx:else>
+                <image src="../../images/avatar.png" mode="aspectFill" style="border-radius:100%;"></image>
+              </block>
+            </view>
+            <!--content-->
+            <view class="section_cont" bindtap="getbillDetails" data-goodsid="{{item.iobill.id}}">
+              <view class="section_cont_sub">
+                <text>{{item.goods.name}}</text>
+              </view>
+              <view class="section_cont_price">出账 {{item.iobill.total}}</view>
+              <view>{{item.dataList[0]}}</view>
+            </view>
+            <!--book
+            <view class="section_book" bindtap="getbillDetails" data-goodsid="{{item.iobill.id}}">
+                  <text>修改</text>
+            </view>-->
+            <view class="body-view">
+              <switch checked bindchange="switch1Change"/>
+            </view>
+          </view>
+
+        </block>
+      </view>
+
+      <view wx:else>暂无数据</view>
+
+    </view>
+
+  </scroll-view>
+</view>

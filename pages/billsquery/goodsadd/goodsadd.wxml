@@ -1,0 +1,20 @@
+<view class="login">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="boxform">
+      <view class="section">
+        <label>名称:</label>
+        <input name="goodsName" class="{{ goodsName == true ? 'userError' : ''}}" type="text" maxlength="11" placeholder="请输入商品名称" />
+      </view>
+      <view class="section">
+        <label>单价:</label>
+        <input name="goodsPrice" class="{{ goodsPrice == true ? 'userError' : ''}}" type="text"  maxlength="20" placeholder="请输入商品单价" />
+      </view>
+    </view>
+    <view class="viewBtn">
+      <button type="swi" formType="submit" hover-class="other-button-hover"> 提交 </button>
+      <button type="swi" bindtap="returnBack" hover-class="other-button-hover">返回</button>
+    </view>
+  </form>
+   
+</view>
+      

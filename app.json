@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/login/login",
+    "pages/recharge/recharge",
+    "pages/report/report",
+    "pages/users/users",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/home/homedetails/homedetails",
+    "pages/myself/myself",
+    "pages/users/userRegister/userRegister",
+    "pages/billsquery/billsquery",
+    "pages/users/userAdd/userAdd",
+    "pages/billsquery/billadd/billadd",
+    "pages/billsquery/billdetail/billdetail",
+    "pages/users/userUpdate/userUpdate",
+    "pages/billsquery/goodsadd/goodsadd"
+  ],
+  "window": {
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "记账本",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "color": "#666666",
+    "selectedColor": "#00BFFF",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "iconPath": "images/5acd66b54b139.png",
+        "selectedIconPath": "images/indexlight.png",
+        "text": "首页",
+        "pagePath": "pages/home/home"
+      },
+      {
+        "iconPath": "images/5acd66b592f65.png",
+        "selectedIconPath": "images/personallight.png",
+        "text": "个人中心",
+        "pagePath": "pages/myself/myself"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 15000,
+    "connectSocket": 30000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false,
+  "sitemapLocation": "sitemap.json"
+}

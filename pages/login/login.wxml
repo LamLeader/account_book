@@ -1,0 +1,26 @@
+<!--pages/login/login.wxml-->
+<view class="login">
+    <image src="../../images/login/bglogin.jpg" ></image>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+       <view class="">
+            <view class="section">
+              <label>账号:</label> 
+              <input name="userName" class="{{ userName == true ? 'userError' : ''}}" type="text" maxlength="11" placeholder="请输入电话号码" />
+             </view>
+            <view class="section">
+              <label> 密码:</label> 
+              <input name="userPassword" class="{{ userPassword == true ? 'userError' : ''}}" type="text"
+              password  maxlength="20" placeholder="请输入您的密码" />
+            </view>
+       </view>
+       
+       <view class="viewBtn">
+            <button type="swi"   formType="submit" hover-class="other-button-hover"> 登录 </button> 
+            <button type="swi"  bindtap="register"  hover-class="other-button-hover">注册</button> 
+       </view>
+      
+    </form>
+</view>
+ <view class="versions">
+           <view class="versionRight">版权归属:@all right 20190804</view>
+ </view>

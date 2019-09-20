@@ -1,0 +1,22 @@
+<view class="container">
+<view class="ar_coverpath">
+    <image src="../../../images/accounts.png" mode="aspectFill"></image>
+</view>
+<view class="ar_cont">
+    <text class="ar_cont_h1">物品名称：{{billsData.goods.name}}</text>
+    <text class="ar_cont_price">总价：{{billsData.iobill.total}} </text>
+    <text>   
+      单价：{{billsData.iobill.price}}
+    </text>
+    <text>   
+      数量：{{billsData.iobill.counts}}
+    </text>
+    <view class="ar_line"></view>
+    <text class="ar_cont_h1">详情描述</text>
+    <text>
+    购买时间：{{billsData.iobill.createdate}}
+    </text>
+    <button class="ar_book" bindtap="returnBack">返回</button>
+</view>
+
+</view>

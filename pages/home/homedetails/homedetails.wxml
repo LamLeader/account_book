@@ -1,0 +1,4 @@
+<!--pages/home/homedetails/homedetails.wxml-->
+<view>
+    <p>This is my homededetails page</p>
+</view>

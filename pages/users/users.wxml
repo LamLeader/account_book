@@ -1,0 +1,52 @@
+<view class="container" style="">
+   <view class='page_row' bindtap=""  style="height:45px;position:fixed;top:5px;">
+    <view class="search">
+     <view class="df search_arr" bindtap="">
+        <form bindsubmit="queryUser" bindreset="formReset">
+            <icon class="searchcion" size='20' type='search' ></icon>
+            <input class="" type="text" placeholder="请输入关键字"  name="nickname" bindinput="searchNickName" value=""/>
+        </form>
+         <!--<button formType="button" class="search_btn" bindtap='queryUser'>搜索</button>  -->
+      </view>
+    </view>
+</view>
+<scroll-view  scroll-y="true"  class="page-body" bindscrolltolower="loadMore" style="height:100%;">
+  <!--list-->
+  <view class="nav_section" style="position:relative;top:1px;">
+    <view wx:if="{{userData}}">
+        <block wx:for="{{userData}}" wx:key="item.id">
+            <view class="nav_section_items" >
+                <!--image-->
+                <view class="section_image" bindtap="navigateDetail" data-aid="{{item.id}}">
+                <block wx:if="{{item.coverpath}}">
+                    <image src="{{item.coverpath}}" mode="aspectFill" style="border-radius:100%;"></image>
+                </block>
+                <block wx:else >
+                    <image src="../../images/avatar.png" mode="aspectFill" style="border-radius:100%;"></image>
+                </block>
+                </view>
+                <!--content-->
+                <view class="section_cont" bindtap="navigateDetail" data-aid="{{item.id}}">
+                    <view class="section_cont_sub">
+                        <text>{{item.nickname}}</text>
+                    </view>
+                     <view class="section_cont_price">昵称</view>
+                    <view>{{item.loginname}}</view>
+                </view>
+                <!--book-->
+                <view class="section_book" bindtap="getUserById" data-uid="{{item.id}}">
+                        <text>修改</text>
+                </view>
+                {{pageNum}}
+            </view>
+        </block>
+    </view>
+    <view wx:else>暂无数据</view>
+  </view>
+</scroll-view>
+
+</view>
+ <!--圆形点击框  -->
+  <view class="addUserView">
+       <navigator url='../users/userAdd/userAdd' >添加用户</navigator >
+  </view>

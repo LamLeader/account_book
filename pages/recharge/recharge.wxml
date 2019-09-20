@@ -1,0 +1,37 @@
+<view class="login">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="boxform">
+      <view class="section">
+        <label>名称:</label>
+        <input name="goodsName" class="{{ goodsName == true ? 'userError' : ''}}" type="text" maxlength="11" placeholder="请输入商品名称" />
+      </view>
+      <view class="section">
+        <label>单价:</label>
+        <input name="goodsPrice" class="{{ goodsPrice == true ? 'userError' : ''}}" type="text"  maxlength="20" placeholder="请输入商品单价" />
+      </view>
+      <view class="section">
+        <label>数量:</label>
+        <input name="goodsCounts" class="{{ goodsCounts == true ? 'userError' : ''}}" type="text" maxlength="11" placeholder="请输入购买数量" />
+      </view>
+      <!-- 下拉框 -->
+      <view class="section">
+        <view class='select_box'>
+        <view class='select' catchtap='selectTap'>
+          <text class='select_text'>{{selectData[index]}}</text>
+        </view>
+        <view class='option_box' style='height:{{show?(selectData.length>5?300:selectData.length*60):0}}rpx;'>
+          <text class='option' style='{{index==selectData.length-1&&"border:0;"}}' wx:for='{{selectData}}'
+          wx:key='this' data-index='{{index}}'  catchtap='optionTap'>{{item}}</text>
+        </view>
+      </view>
+      </view>
+    </view>
+    <view class="viewBtn">
+      <button type="swi" formType="submit" hover-class="other-button-hover"> 提交 </button>
+      <button type="swi" bindtap="returnBack" hover-class="other-button-hover">返回</button>
+    </view>
+  </form>  
+</view>
+<view class="balance">
+        <label>余额：</label>
+</view>  
