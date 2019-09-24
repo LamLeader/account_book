@@ -2,6 +2,7 @@
 //获取应用实例
 const app = getApp()
 var openid = wx.getStorageSync("openid");
+var httpRequestUtil = require("../../utils/network.js"); //require引入
 Page({
   data: {
     hasUserInfo: openid == ""
@@ -114,7 +115,7 @@ Page({
   loginOut:function(evet){
     wx.showLoading({ title: '数据请求中...', icon: 'loading', duration: 10000 });//显示请求框
     wx.request({
-      url: 'http://192.168.101.17:8080/fmServer/mobile/authen/loginOut', //仅为示例，并非真实的接口地址
+      url: httpRequestUtil.webUrl +'/fmServer/mobile/authen/loginOut', //仅为示例，并非真实的接口地址
       data: {
         loginName: '',
         passWord: ''
